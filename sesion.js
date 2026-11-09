@@ -1,4 +1,4 @@
-// Simulación de hashing de contraseña usando SHA-256 de Web Crypto API
+// Hash SHA-256 local
 async function hashPassword(password) {
   const encoder = new TextEncoder();
   const data = encoder.encode(password);
@@ -7,7 +7,7 @@ async function hashPassword(password) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Credenciales registradas (Hash SHA-256 de "admin123")
+// Credencial demo (Usuario: admin@uaemex.mx / Contraseña: admin123)
 const REGISTERED_USER = "admin@uaemex.mx";
 const REGISTERED_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
 
@@ -17,11 +17,14 @@ let lockUntil = parseInt(localStorage.getItem('lock_until') || '0');
 function checkSession() {
   const token = localStorage.getItem('auth_token');
   const sessionOverlay = document.getElementById('loginModal');
+  const mainContainer = document.querySelector('.container');
   
   if (!token) {
     if (sessionOverlay) sessionOverlay.style.display = 'flex';
+    if (mainContainer) mainContainer.style.display = 'none'; // Oculta contenido si no hay sesión
   } else {
     if (sessionOverlay) sessionOverlay.style.display = 'none';
+    if (mainContainer) mainContainer.style.display = 'block'; // Muestra contenido
   }
 }
 
@@ -32,7 +35,7 @@ async function handleLogin(e) {
 
   if (now < lockUntil) {
     const remainingSeconds = Math.ceil((lockUntil - now) / 1000);
-    errorMessage.textContent = `Cuenta bloqueada temporalmente. Intente en ${remainingSeconds}s.`;
+    errorMessage.textContent = `Cuenta bloqueada. Intente en ${remainingSeconds}s.`;
     return;
   }
 
@@ -52,7 +55,7 @@ async function handleLogin(e) {
     localStorage.setItem('failed_attempts', failedAttempts.toString());
 
     if (failedAttempts >= 3) {
-      lockUntil = Date.now() + 30000; // 30 segundos de bloqueo
+      lockUntil = Date.now() + 30000; // Bloqueo de 30 segundos
       localStorage.setItem('lock_until', lockUntil.toString());
       errorMessage.textContent = "Demasiados intentos fallidos. Bloqueado por 30 segundos.";
     } else {
