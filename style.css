@@ -274,7 +274,9 @@ a:hover {
   p, ol, ul {
     font-size: 1em;
   }
-  /* Modal de Autenticación */
+/* =====================================
+   ESTILOS PARA MODAL DE INICIO DE SESIÓN
+   ===================================== */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -304,6 +306,7 @@ a:hover {
   border: 1px solid var(--verde-suave);
   border-radius: 6px;
   font-size: 1em;
+  box-sizing: border-box;
 }
 
 .btn-submit {
@@ -316,6 +319,7 @@ a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+  margin-top: 10px;
 }
 
 .btn-submit:hover {
@@ -326,10 +330,5 @@ a:hover {
   color: #d9534f;
   font-size: 0.9em;
   text-align: center;
-  margin-top: 10px;
-}
-  
-  .container {
-    padding: 20px 15px;
-  }
+  margin-top: 12px;
 }
