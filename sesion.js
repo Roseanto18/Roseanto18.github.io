@@ -1,4 +1,4 @@
-// Hash SHA-256 local
+// Función para generar el hash SHA-256 localmente de forma transparente
 async function hashPassword(password) {
   const encoder = new TextEncoder();
   const data = encoder.encode(password);
@@ -7,7 +7,9 @@ async function hashPassword(password) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Credencial demo (Usuario: admin@uaemex.mx / Contraseña: admin123)
+// Credenciales registradas
+// Usuario registrado: miguellopez@gmail.com
+// Hash SHA-256 equivalente a la contraseña: admin123
 const REGISTERED_USER = "miguellopez@gmail.com";
 const REGISTERED_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
 
@@ -21,10 +23,10 @@ function checkSession() {
   
   if (!token) {
     if (sessionOverlay) sessionOverlay.style.display = 'flex';
-    if (mainContainer) mainContainer.style.display = 'none'; // Oculta contenido si no hay sesión
+    if (mainContainer) mainContainer.style.display = 'none';
   } else {
     if (sessionOverlay) sessionOverlay.style.display = 'none';
-    if (mainContainer) mainContainer.style.display = 'block'; // Muestra contenido
+    if (mainContainer) mainContainer.style.display = 'block';
   }
 }
 
@@ -39,12 +41,13 @@ async function handleLogin(e) {
     return;
   }
 
-  const email = document.getElementById('userEmail').value;
-  const pass = document.getElementById('userPassword').value;
+  // trim() quita espacios accidentales y toLowerCase() quita problemas de mayúsculas
+  const email = document.getElementById('userEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('userPassword').value.trim();
 
   const inputHash = await hashPassword(pass);
 
-  if (email === REGISTERED_USER && inputHash === REGISTERED_HASH) {
+  if (email === REGISTERED_USER.toLowerCase() && inputHash === REGISTERED_HASH) {
     // Generación de Token Simulado
     const token = btoa(JSON.stringify({ user: email, exp: Date.now() + 3600000 }));
     localStorage.setItem('auth_token', token);
@@ -55,7 +58,7 @@ async function handleLogin(e) {
     localStorage.setItem('failed_attempts', failedAttempts.toString());
 
     if (failedAttempts >= 3) {
-      lockUntil = Date.now() + 30000; // Bloqueo de 30 segundos
+      lockUntil = Date.now() + 30000; // Bloqueo de 30 segundos tras 3 intentos
       localStorage.setItem('lock_until', lockUntil.toString());
       errorMessage.textContent = "Demasiados intentos fallidos. Bloqueado por 30 segundos.";
     } else {
