@@ -8,7 +8,7 @@ async function hashPassword(password) {
 }
 
 // Credencial demo (Usuario: admin@uaemex.mx / Contraseña: admin123)
-const REGISTERED_USER = "admin@uaemex.mx";
+const REGISTERED_USER = "miguellopez@gmail.com";
 const REGISTERED_HASH = "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918";
 
 let failedAttempts = parseInt(localStorage.getItem('failed_attempts') || '0');
