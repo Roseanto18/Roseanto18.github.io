@@ -7,27 +7,7 @@
     <title>Expo: México IA+ La Inversión Acelerada</title>
   </head>
   <body>
-
-    <!-- Modal de Inicio de Sesión -->
-    <div id="loginModal" class="modal-overlay">
-      <div class="modal-card">
-        <h2>Iniciar Sesión</h2>
-        <p style="font-size: 0.9em; text-align: center; margin-bottom: 15px;">Acceso restringido al portal Expo IA+</p>
-        <form id="loginForm">
-          <input type="email" id="userEmail" placeholder="Correo electrónico" required class="input-field">
-          <input type="password" id="userPassword" placeholder="Contraseña" required class="input-field">
-          <button type="submit" class="btn-submit">Ingresar</button>
-        </form>
-        <p id="loginError" class="error-msg"></p>
-      </div>
-    </div>
-
-    <!-- Contenido Principal -->
-    <div class="container" style="display: none;">
-      <div style="text-align: right;">
-        <button onclick="logout()" style="padding: 8px 15px; background-color: #d9534f; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Cerrar Sesión</button>
-      </div>
-
+    <div class="container">
       <h1>Expo: México IA+ La Inversión Acelerada</h1>
       
       <p>El evento que se llevó a cabo los días 12 y 13 de noviembre en la Expo Santa Fe, fue la oportunidad perfecta para que nosotros, como estudiantes, pudiéramos conocer proyectos actuales desarrollados por empresas e identificar posibles áreas en las que prepararnos para trabajar en el futuro. Por otro lado, para los profesionales y gente de negocios, el evento sirvió para encontrar buenas inversiones y evaluar si entraban para cerrar tratos.</p>
@@ -40,7 +20,7 @@
       <p>De esta manera fue como se vivió la bienvenida de forma general:</p>
       
       <center>
-        <img src="Imagenes/B3.jpg" alt="Vista general del evento" width="500">
+        <img src="Imagenes/B3.jpg" alt="Vista general del evento" width="500" >
         <video controls width="500">
           <source src="Bienvenidavi.mp4" type="video/mp4">
           Tu navegador no soporta el video.
@@ -49,13 +29,15 @@
 
       <p>El día inició con la presentación de los ponentes, quienes tocaron temas importantes en su respectivo espacio. Para conocer más sobre lo que dijeron o qué temas tocaron visita:</p>
 
+
       <center>
         <img src="Imagenes/Presentacion.jpg" alt="Vista general del evento" width="700">
       </center>
       
       <center>
-        <!-- Imagen estática sin enlace <a> -->
-        <img class="Enlace" id="Speakers" width="130" src="Imagenes/Boton-ESP.png" alt="Ver Speakers">
+        <a href="Speakers.html">
+          <img class="Enlace" id="Speakers" width="130" src="Imagenes/Boton-ESP.png" alt="Ver Speakers">
+        </a>
       </center>
       
       <h2>Empresas Participantes</h2>
@@ -63,12 +45,21 @@
       <p>Las empresas multinacionales y nacionales que participaron fueron cruciales para el desarrollo de este evento, pues presentaron proyectos los cuales tienen como objetivo beneficiar a la sociedad. NVIDIA y CIPRE HOLDING (las empresas anfitrionas) fueron las principales parteaguas para hacer esto posible. De igual forma para conocer sus proyectos da clic en el de tu interés.</p>
 
       <center>
-        <!-- Imágenes estáticas sin enlaces <a> -->
-        <img class="Enlace" id="NVIDIA" width="130" src="Imagenes/nvidia.jpg" alt="NVIDIA">
-        <img class="Enlace" id="CIPRE_HOLDING" width="130" src="Imagenes/Cipre.jpg" alt="CIPRE HOLDING">
-        <img class="Enlace" id="Dell_Tecnologies" width="200" src="Imagenes/Dell.jpg" alt="Dell Technologies">
-        <img class="Enlace" id="Meta" width="200" src="Imagenes/Meta.jpg" alt="Meta">
-        <img class="Enlace" id="Axtel" width="200" src="Imagenes/axtel.png" alt="Axtel">
+        <a href="NVIDIA.html">
+          <img class="Enlace" id="NVIDIA" width="130" src="Imagenes/nvidia.jpg" alt="NVIDIA">
+        </a>
+        <a href="CIPRE_HOLDING.html">
+          <img class="Enlace" id="CIPRE_HOLDING" width="130" src="Imagenes/Cipre.jpg" alt="CIPRE HOLDING">
+        </a>
+        <a href="Dell Tecnologies.html">
+          <img class="Enlace" id="Dell_Tecnologies" width="200" src="Imagenes/Dell.jpg" alt="Dell Technologies">
+        </a>
+        <a href="Meta.html">
+          <img class="Enlace" id="Meta" width="200" src="Imagenes/Meta.jpg" alt="Meta">
+        </a> 
+        <a href="Axtel.html">
+          <img class="Enlace" id="Axtel" width="200" src="Imagenes/axtel.png" alt="Axtel">
+        </a>
       </center>
       
       <p>Asimismo otras empresas como Doctor & Health, demostraron que usan la inteligencia artificial para detectar de una forma más precisa enfermedades, en este caso nos comentaron que estaban con la detección de tumores, lo hacen entrenando modelos de IA con datos e imágenes de tumores. Es importante mencionar que no dejan la responsabilidad totalmente en la IA, ya que es fundamental la colaboración con médicos especializados, pues ellos son los que tienen los conocimientos y experiencia para validar los resultados y solo usan la inteligencia artificial como una herramienta muy poderosa que ayuda a encontrar patrones que a veces son difíciles de reconocer a simple vista. Gracias a esto, se pueden detectar enfermedades en etapas más tempranas y ofrecer un mejor pronóstico para los pacientes. Por lo que de esta manera se demuestra el uso de la IA en diferentes áreas.</p>
@@ -119,7 +110,7 @@
       
       <h5>¿Qué es lo que hay que esperar?</h5>
       
-      <p>Mucho se habla sobre que las personas van a ser reemplazadas por la IA. Como enseñanza y aprendizaje de estos dos días de conferencia, es claro que no falta mucho para un cambio, pero ¿no se supone que por eso y más hemos pasado muchas veces?, entonces ¿cuál es la diferencia? Como especie humana hemos sido fieles testigos de cómo si no te adaptas al cambio, es obvio que ya perdiste. Sin embargo, si logras adaptarte, ganas la experiencia de que el cambio no es necesariamente malo, pues respecto a la IA, lo malo sería depender de ella de manera cognitiva, así que seguramente en el futuro surgirán nuevos puestos de trabajo, ya que el objetivo es reacondicionar la oferta laboral y claro, también lograr que al usar la IA lo hagamos de tal forma que no nos afecte nuestro pensamiento crítico y de resolución de problemas, ya que esa me la tarea humana que debemos reservarnos para decirle a la IA lo que debe hacer.</p>
+      <p>Mucho se habla sobre que las personas van a ser reemplazadas por la IA. Como enseñanza y aprendizaje de estos dos días de conferencia, es claro que no falta mucho para un cambio, pero ¿no se supone que por eso y más hemos pasado muchas veces?, entonces ¿cuál es la diferencia? Como especie humana hemos sido fieles testigos de cómo si no te adaptas al cambio, es obvio que ya perdiste. Sin embargo, si logras adaptarte, ganas la experiencia de que el cambio no es necesariamente malo, pues respecto a la IA, lo malo sería depender de ella de manera cognitiva, así que seguramente en el futuro surgirán nuevos puestos de trabajo, ya que el objetivo es reacondicionar la oferta laboral y claro, también lograr que al usar la IA lo hagamos de tal forma que no nos afecte nuestro pensamiento crítico y de resolución de problemas, ya que esa es la tarea humana que debemos reservarnos para decirle a la IA lo que debe hacer.</p>
       
       <center> 
         <img src="Imagenes/Esce.jpg" alt="Escenario" width="700"> 
@@ -134,8 +125,6 @@
         <img src="coches.jpeg" alt="Coches" width="700"> 
       </center>
     </div>
-
-    <!-- Vinculación con sesion.js -->
-    <script src="sesion.js"></script>
   </body>
+
 </html>
